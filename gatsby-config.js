@@ -6,5 +6,15 @@
 
 module.exports = {
   /* Your site config here */
-  plugins: [],
+  plugins: [
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `services`,
+        path: `${__dirname}/src/services/`,
+      },
+    },
+    `gatsby-plugin-playground`,
+    `gatsby-transformer-remark`
+  ],
 }

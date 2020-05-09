@@ -1,3 +1,12 @@
 import React from "react"
+import Base from "../components/base.js"
 
-export default () => <div>Hello world!</div>
+const index = () => {
+    return (
+        <Base>
+            This is the homepage
+        </Base>
+    )
+}
+
+export default index

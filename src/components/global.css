@@ -1,0 +1,50 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+input {
+    height: 50px ;
+    /* margin: 5px; */
+    padding: 10px 5px;
+}
+
+footer {
+    padding: 25px 0;
+    text-align: center;
+    border-top: 1px solid #c2c2c2;
+    margin: 50px 0;
+}
+
+p {
+    line-height: 2rem;
+    font-size: 14pt;
+    margin-bottom: 20pt;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+ol > li {
+    margin: 12pt;
+    font-size: 14pt;
+}
+
+.hero {
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    font-size: 4rem;
+    text-align:center;
+    background: url('http://www.rmzcorp.com/uploads/images/full/c4f7a739ef8c354394a4e818a616ca78.jpg') no-repeat center center / cover;
+    color: white;
+    flex-direction: column;
+}
+
+h1 {
+    text-align: center;
+    margin: 20px 0;
+}

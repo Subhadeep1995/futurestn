@@ -1,6 +1,8 @@
 import React from 'react'
 import { Link, graphql, useStaticQuery } from 'gatsby'
 import Base from '../components/base'
+import servicesStyles from '../components/services.module.css'
+// import Head from '../components/head'
 
 const Services = () => {
     const data = useStaticQuery(graphql`
@@ -25,15 +27,15 @@ const Services = () => {
     `)
     return (
         <div>
+            
             <Base>
             <h1>Services</h1>
-            <ul>
+            <ul className={servicesStyles.services}>
                 {data.allMarkdownRemark.edges.map((edge) => {
                     return (
-                        <li>
+                        <li className={servicesStyles.service_item}>
                             <Link to={`/services/${edge.node.fields.slug}`}><h1>{edge.node.frontmatter.title}</h1></Link>
-                            <small>{edge.node.frontmatter.date}</small>
-                            <p>{edge.node.html}</p>
+                            
                         </li>
                     )
                 })}

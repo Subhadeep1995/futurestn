@@ -1,11 +1,16 @@
 import React from "react"
-import Base from "../components/base.js"
+import Header from "../components/header.js"
+import Footer from "../components/footer.js"
 
 const index = () => {
     return (
-        <Base>
-            This is the homepage
-        </Base>
+        <div>
+            <Header/>
+                <div className="hero">
+                    Adding Value Through Sustainability-Related Measures
+                </div>
+            <Footer/>
+        </div>
     )
 }
 

@@ -15,6 +15,7 @@ module.exports = {
       },
     },
     `gatsby-plugin-playground`,
-    `gatsby-transformer-remark`
+    `gatsby-transformer-remark`,
+    `gatsby-plugin-react-helmet`
   ],
 }

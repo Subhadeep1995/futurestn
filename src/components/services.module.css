@@ -1,0 +1,13 @@
+.services {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.service_item {
+    display: inline-block;
+    margin: 0 15px;
+    height: 200px;
+    width: 300px;
+    border: 1px solid #c3c3c3;
+    padding: 20px;
+}

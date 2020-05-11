@@ -49,3 +49,27 @@ module.exports.createPages = async ({ graphql, actions }) => {
         })
     })
 }
+
+// for the articles page
+
+exports.createPages = async ({graphql, actions}) => {
+    const {createPage} = actions
+    const result = await graphql(`query GetArticles {
+        articles: allContentfulArticle {
+          nodes {
+            url
+          }
+        }
+      }`)
+
+    result.data.articles.nodes.forEach((article) => {
+        createPage({
+            path: `/article/${article.url}`,
+            component: path.resolve(`src/templates/article.js`),
+            context: {
+                url: article.url,
+            }
+        })
+    } )
+
+}

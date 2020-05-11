@@ -11,6 +11,7 @@ const Header = () => {
                 <Link to="/" className={headerStyles.logo}>FutureStation</Link>
                 <nav>
                     <ul className={headerStyles.nav_list}>
+                    <li className={headerStyles.nav_item}><Link to="/articles" className={headerStyles.link}>Articles</Link></li>
                         <li className={headerStyles.nav_item}><Link to="/services" className={headerStyles.link}>Services</Link></li>
                         <li className={headerStyles.nav_item}><Link to="/contact" className={headerStyles.link}>Contact</Link></li>
                         <li className={headerStyles.nav_item}><Link to="/about" className={headerStyles.link}>About</Link></li>

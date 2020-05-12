@@ -23,8 +23,10 @@ module.exports.onCreateNode = ({ node, actions}) => {
 
 module.exports.createPages = async ({ graphql, actions }) => {
     const { createPage } = actions
-    const serviceTemplate = path.resolve('./src/templates/service.js')
+    const oldServiceTemplate = path.resolve('./src/templates/service.old.js')
 
+
+    //query for markdown stuff
     const res = await graphql(`
         query {
             allMarkdownRemark {
@@ -42,7 +44,7 @@ module.exports.createPages = async ({ graphql, actions }) => {
     res.data.allMarkdownRemark.edges.forEach((edge) => {
         createPage({
             component: serviceTemplate,
-            path: `/services/${edge.node.fields.slug}`,
+            path: `/old-services/${edge.node.fields.slug}`,
             context: {
                 slug: edge.node.fields.slug
             }
@@ -50,10 +52,19 @@ module.exports.createPages = async ({ graphql, actions }) => {
     })
 }
 
-// for the articles page
+
+
+
+// Page Creation Done Below
+
+
+
 
 exports.createPages = async ({graphql, actions}) => {
     const {createPage} = actions
+
+    // query for the articles page
+
     const result = await graphql(`query GetArticles {
         articles: allContentfulArticle {
           nodes {
@@ -61,6 +72,21 @@ exports.createPages = async ({graphql, actions}) => {
           }
         }
       }`)
+
+
+    //query for services page
+
+    const serviceresult = await graphql(`
+    query ServicesQuery {
+        services: allContentfulService {
+          nodes {
+            slug
+          }
+        }
+      }
+    `)
+
+    // creating the articles page
 
     result.data.articles.nodes.forEach((article) => {
         createPage({
@@ -72,4 +98,42 @@ exports.createPages = async ({graphql, actions}) => {
         })
     } )
 
+
+    // for the services page
+
+    serviceresult.data.services.nodes.forEach((service) => {
+        createPage({
+            path: `/services/${service.slug}`,
+            component: path.resolve(`src/templates/serviceTemplate.js`),
+            context: {
+                slug: service.slug,
+            }
+        })
+    })
+
 }
+
+
+
+// exports.createPages = async ({graphql, actions}) => {
+//     const {createPage} = actions
+//     const serviceresult = await graphql(`
+//     query ServicesQuery {
+//         services: allContentfulService {
+//           nodes {
+//             slug
+//           }
+//         }
+//       }
+//     `)
+
+//     serviceresult.data.services.nodes.forEach((service) => {
+//         createPage({
+//             path: `/services/${service.slug}`,
+//             component: path.resolve(`src/templates/serviceTemplate.js`),
+//             context: {
+//                 slug: service.slug,
+//             }
+//         })
+//     })
+// }

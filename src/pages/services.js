@@ -1,25 +1,14 @@
 import React from 'react'
-import { Link, graphql, useStaticQuery } from 'gatsby'
+import {Link, graphql, useStaticQuery} from 'gatsby'
 import Base from '../components/base'
-import servicesStyles from '../components/services.module.css'
-// import Head from '../components/head'
-
 const Services = () => {
     const data = useStaticQuery(graphql`
-    query {
-        allMarkdownRemark {
+    query AllServiceQuery{
+        services:allContentfulService {
           edges {
             node {
-              frontmatter {
-                title
-                author
-                date
-                posttype
-              }
-              html
-              fields {
-                  slug
-              }
+              slug
+              title
             }
           }
         }
@@ -27,20 +16,14 @@ const Services = () => {
     `)
     return (
         <div>
-            
             <Base>
-            <h1>Services</h1>
-            <ul className={servicesStyles.services}>
-                {data.allMarkdownRemark.edges.map((edge) => {
+            <ul>
+                {data.services.edges.map((edge) => {
                     return (
-                        <li className={servicesStyles.service_item}>
-                            <Link to={`/services/${edge.node.fields.slug}`}><h1>{edge.node.frontmatter.title}</h1></Link>
-                            
-                        </li>
+                    <li><Link to={`/services/${edge.node.slug}`}>{edge.node.title}</Link></li>
                     )
                 })}
-            </ul>
-            </Base>
+            </ul></Base>
         </div>
     )
 }

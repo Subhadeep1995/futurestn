@@ -24,7 +24,7 @@ query (
   }
 `
 
-const Service = (props) => {
+const ServiceOld = (props) => {
     
     return (
         <div>
@@ -37,4 +37,4 @@ const Service = (props) => {
     )
 }
 
-export default Service
+export default ServiceOld

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="210mm" height="297mm" version="1.1" viewBox="0 0 210 297" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+ <metadata>
+  <rdf:RDF>
+   <cc:Work rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:title/>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <g stroke-width=".26458">
+  <text x="75.376312" y="164.88289" fill="#3fa9f5" font-family="Mistral, Mistral" font-size="9.525px">FutureStation</text>
+  <circle cx="128.95" cy="166.87" r="1.1906" fill="#ff931e"/>
+  <circle cx="127.37" cy="166.87" r="1.1906" fill="#2e3192"/>
+  <circle cx="125.78" cy="166.87" r="1.1906" fill="#ed1e79"/>
+  <text x="105.18692" y="167.76685" fill="#534741" font-family="MaiandraGD-Regular, 'Maiandra GD'" font-size="2.9104px">Going Beyond</text>
+ </g>
+</svg>

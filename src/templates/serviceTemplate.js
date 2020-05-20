@@ -2,6 +2,8 @@ import React from 'react'
 import { Link, graphql, useStaticQuery } from 'gatsby'
 import Base from '../components/base'
 import {documentToReactComponents} from '@contentful/rich-text-react-renderer'
+import '../components/master.css'
+import '../components/page.css'
 
 export const data = graphql`
 query ServiceQuery ($slug: String!) {
@@ -29,8 +31,19 @@ const Service = (props) => {
     return (
         <div>
             <Base>
-                <h1>{props.data.service.title}</h1>
-                <div>{documentToReactComponents(props.data.service.body.json, options)}</div>
+
+            <div class="page-title-container">
+                <div class="page-heading">
+                    <h1>{props.data.service.title}</h1>
+                </div>
+            </div>
+            
+            <div class="page-body">
+                <div class="container">
+                    <p>{documentToReactComponents(props.data.service.body.json, options)}</p>
+                </div>
+            </div>           
+                
             </Base>
         </div>
     )

@@ -1,11 +1,21 @@
 import React from 'react'
 import Base from '../components/base'
+import '../components/master.css'
+import '../components/page.css'
 
 const about = () => {
     return (
         <Base>
-            <h1>About</h1>
-            <p>Futurestation Advisors LLP is a niche professional services firm, based out of NCR and Kolkata.
+
+<div class="page-title-container">
+                <div class="page-heading">
+                    <h1>About</h1>
+                </div>
+            </div>
+            
+            <div class="page-body">
+                <div class="container">
+                <p>Futurestation Advisors LLP is a niche professional services firm, based out of NCR and Kolkata.
             Set up by former leaders of the Big 4 professional services firms, it serves clients globally through a network of firms set up by former EY partners/directors in Europe and Middle East. In just about more than a year, the firm has created a name for itself and has served clients in Austria, UAE, Bangladesh and India.</p>
             <p>The firm has a team of experienced professionals who have worked in Big 4 firms / other reputed advisory firms in India. Our services cover Sustainability, Digital Empowerment, Risk Management and Human Capital. Our Sustainability services is run by Sudipta Das.</p>
 
@@ -16,6 +26,9 @@ const about = () => {
             <p>Former Member- Low Carbon Development Group, Planning Commission, GoI </p>
             <p>National Vice President – Indo American Chamber of Commerce Member, Advisory Board, IIM Lucknow </p>
             <p>Visiting Faculty – IIM Shillong , IIM Lucknow and IMT Nagpur</p>
+                </div>
+            </div> 
+            
 
         </Base>
     )

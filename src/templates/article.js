@@ -15,7 +15,6 @@ query SingleArticle($url: String!) {
       createdAt(formatString: "DD.MM.YYYY")
       created
       title
-      tags
       url
       body {
           json

@@ -12,7 +12,7 @@ module.exports.onCreateNode = ({ node, actions}) => {
                 name: 'slug',
                 value: slug
             })
-            console.log(JSON.stringify(node, undefined, 5))
+            // console.log(JSON.stringify(node, undefined, 5))
         
         
     }
@@ -115,25 +115,3 @@ exports.createPages = async ({graphql, actions}) => {
 
 
 
-// exports.createPages = async ({graphql, actions}) => {
-//     const {createPage} = actions
-//     const serviceresult = await graphql(`
-//     query ServicesQuery {
-//         services: allContentfulService {
-//           nodes {
-//             slug
-//           }
-//         }
-//       }
-//     `)
-
-//     serviceresult.data.services.nodes.forEach((service) => {
-//         createPage({
-//             path: `/services/${service.slug}`,
-//             component: path.resolve(`src/templates/serviceTemplate.js`),
-//             context: {
-//                 slug: service.slug,
-//             }
-//         })
-//     })
-// }

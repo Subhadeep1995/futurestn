@@ -15,6 +15,7 @@ query SingleArticle($url: String!) {
       createdAt(formatString: "DD.MM.YYYY")
       created
       title
+      tags
       url
       body {
           json
@@ -51,7 +52,7 @@ const Article = (props) => {
             <div class="container">
                 <ul>
                     <li>Author: {props.data.article.author}</li>
-                    <li>Tags: vue, react, angular</li>
+                    <li>Tags: {props.data.article.tags}</li>
                     <li>Date: {props.data.article.createdAt}</li>
                 </ul>
             </div>
